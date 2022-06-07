@@ -1,0 +1,86 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #fafafa;
+}
+
+::placeholder {
+	color: darkgrey;
+	font-size: 14px;
+}
+
+.logInbox {
+	border: 1px solid #ddd;
+	width: 320px;
+	height: 420px;
+	background: #fff;
+	color: #000;
+	position: absolute;
+	top: 80px;
+	left: 30%;
+	box-sizing: border-box;
+	padding: 30px 30px;
+}
+
+#userPic {
+	width: 150px;
+	position: absolute;
+	top: -50px;
+	left: 90px;
+}
+
+h1 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Pacifico', cursive;
+}
+
+.logInbox p {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+.logInbox input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.logInbox input[type="text"], input[type="password"] {
+	border: 1px solid #ddd;
+	background: #F5F5F5;
+	outline: none;
+	height: 40px;
+	color: #000;
+	font-size: 16px;
+	text-indent: 10px;
+}
+
+.logInbox input[type="submit"] {
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #fb2525;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.logInbox input[type="submit"]:hover {
+	cursor: pointer;
+	background: darkred;
+	color: #fff;
+}
+
+.logInbox a {
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #000;
+}
+
+.logInbox a:hover {
+	color: darkgrey;
+}
