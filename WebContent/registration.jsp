@@ -28,7 +28,7 @@ if (session.getAttribute("username") != null) {
 			<form action="RegServlet" method="post">
 				<table>
 					<tr><td><p id="emailResult" style="color: red"></p></td></tr>
-					<tr><td><input id="emailAddress" type="text" name="email" placeholder="Email" required></td></tr>
+					<tr><td><input id="email" type="text" name="email" placeholder="Email" required></td></tr>
 					<tr><td><input id="firstName" type="text" name="first_name" placeholder="First Name" required></td></tr>
 					<tr><td><input id="lastName" type="text" name="last_name" placeholder="Last Name" required></td></tr>
 					<tr><td><p id="usernameResult" style="color: red"></p></td></tr>
@@ -58,19 +58,19 @@ if (session.getAttribute("username") != null) {
 				$.ajax({
 					type:'POST',
 					data:{username:username},
-					url:'../RegServlet',
+					url:'RegServlet',
 					success: function(result) {
 						$('#usernameResult').html(result);
 					}
 				});
 			});
-			$('#emailAddress').change(function(){
-				var emailAddress = $('#emailAddress').val();
+			$('#email').change(function(){
+				var email = $('#email').val();
 				
 				$.ajax({
 					type:'POST',
-					data:{emailAddress:emailAddress},
-					url:'../RegServlet',
+					data:{email:email},
+					url:'RegServlet',
 					success: function(result) {
 						$('#emailResult').html(result);
 					}

@@ -5,24 +5,108 @@
 <head>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/homePageCSS.css" type="text/css"></link>
+	<link rel="stylesheet" href="css/homePageCSS.css" type="text/css"></link>
 	<%@page import="models.User" %>
 	<%User myUser = (User) session.getAttribute("User_Info");%>
 	<jsp:include page="addBootstrap.jsp"/>
 	<title>Home</title>
+
+<style type="text/css">
+	@charset "ISO-8859-1";
 	
-
-<!-- Navigation -->
-
+	body {
+		background-color: #FFF9ED !important; 
+		background-size: cover;
+		background-position: center;
+	}
+	
+	::-webkit-scrollbar {
+		display: none;
+	}
+	
+	.col-md-12 >.text-center {
+		font-family: 'Josefin Sans', sans-serif;
+		padding: 20px;
+	}
+	
+	.container-fluid .row .text-center {
+		padding: 17px;
+	}
+	
+	.container-fluid .row .text-center .shadowBox > h4 {
+		font-family: 'Yanone Kaffeesatz', sans-serif;
+		font-size: 30px;
+	}
+	
+	.container-fluid .row .text-center .shadowBox > h6 {
+		font-family: 'Quicksand', sans-serif;
+		font-size: 20px;
+	}
+	
+	#second {
+		background-image: url(images/pexels-photo-1122405.jpeg);
+		background-size: auto;
+		background-position: center center;
+		color: white;
+		padding: 30px;
+		border-radius: 10px;
+	}
+	
+	.shadowBox:hover {
+		background: rgba(0, 0, 0, 0.7);
+		border-radius: 10px;
+		transition: background 1s ease-in-out;
+		border: 2px solid white;
+	}
+	
+	#facebook {
+		padding: 2rem;
+		font-size: 4.5em;
+		color: #3B5998; 
+	}
+	
+	#twitter {
+		padding: 2rem;
+		font-size: 4.5em;
+		color: #00ACED;
+	}
+	
+	#snapchat {
+		padding: 2rem;
+		font-size: 4.5em;
+		color: #000000;
+	}
+	
+	#instagram {
+		padding: 2rem;
+		font-size: 4.5em;
+		color: #c32aa3;
+	}
+	
+	#youtube {
+		padding: 2rem;
+		font-size: 4.5em;
+		color: #BB0000;
+	}
+	
+	#twitter:hover, #instagram:hover{
+		transition: color 0.5s ease;
+		color: #fd1d1d;
+	}
+	
+	#facebook:hover, #snapchat:hover, #youtube:hover{
+		transition: color 0.5s ease;
+		color: #fc466b;
+	}
+</style>
 <%
 response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); //HTTP 1.1
 response.setHeader("Pragma", "no-cache"); //HTTP 1.0
 response.setHeader("Expires", "0"); //Proxies
 
-if(session.getAttribute("username") == null) {
-	request.getRequestDispatcher("Login.jsp").forward(request,response);
+if (session.getAttribute("username") == null) {
+	request.getRequestDispatcher("Login.jsp").forward(request, response);	
 }
-
 
 %>
 </head>

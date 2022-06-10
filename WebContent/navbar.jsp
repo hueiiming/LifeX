@@ -7,12 +7,12 @@
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../css/navbar.css" type="text/css"></link>
+<link rel="stylesheet" href="css/navbar.css" type="text/css"></link>
 <style type="text/css">
 
 .navbar {
   overflow: hidden;
-  background-color: #fff;
+  background-image: url(images/pexels-miguel-á-padriñán-19670.jpg);
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
@@ -60,28 +60,11 @@
 .navbar a:hover::before {
   width: 100%;
 }	
-
 </style>
 </head>
 
 <body>
-<!-- 
-	<header>
-		<div class="container">
-			<h1 class="logo"></h1>
-			<nav>
-				<ul>
-					<li><a href="redirectHmPage">Home</a></li>
-					<li><a href="#">E-Wallet</a></li>
-					<li><a href="#">Health</a></li>
-					<li><a href="#">Fashion</a></li>
-					<li><a href="#">Chat</a></li>
-					<li><a href="redirectProfile">Profiles</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
- -->
+
  <div class="navbar navbar-fixed-top">
  	<a href="RedirectHmPage">Home</a>
  	<a href="#">E-Wallet</a>
@@ -89,5 +72,7 @@
  	<a href="#">Chat</a>
  	<a href="redirectProfile">Profile</a>
  </div>
+
+ 
 </body>
 </html>
