@@ -65,8 +65,10 @@ public class DAO {
 		String directory = System.getProperty("user.home");
 		File imgfile = new File(directory + "/lifeX/LifeX/WebContent/images/user.png");
 		user.setTimeStamp(DateUtil.getCurrentTimestamp());
+		user.setFriends("");
+		user.setFriendRequest("");
 		FileInputStream fin = new FileInputStream(imgfile);
-
+		
 		PreparedStatement prepStmt = con.prepareStatement(SQLStatements.insertUser());
 		prepStmt.setString(1, user.getUsername());
 		prepStmt.setString(2, user.getPassword());
@@ -78,7 +80,7 @@ public class DAO {
 		prepStmt.setString(7, user.getFriends());
 		prepStmt.setString(8, user.getFriendRequest());
 		prepStmt.setTimestamp(9, user.getTimeStamp());
-		prepStmt.setBinaryStream(10, (InputStream)fin, (int)imgfile.length());
+		prepStmt.setBinaryStream(10, fin, (int)imgfile.length());
 		prepStmt.setTimestamp(11, null);
 		prepStmt.setString(12, "");
 
@@ -140,7 +142,6 @@ public class DAO {
 		ResultSet rs = prepStmt.executeQuery();
 		while(rs.next()) {
 			JSONObject json = new JSONObject();
-			User user = new User();	
 			json.put("id", rs.getInt("id"));
 			json.put("username", rs.getString("username"));
 			json.put("first_name", rs.getString("first_name"));
@@ -150,7 +151,7 @@ public class DAO {
 			json.put("friends", rs.getString("friends"));
 			json.put("friend_request", rs.getString("friend_request"));
 			json.put("time_stamp", rs.getString("time_stamp"));
-			json.put("profile_pic", rs.getString("profile_pic"));
+			json.put("profile_pic", rs.getBlob("profile_pic"));
 			
 			jsonArray.put(json);
 		}

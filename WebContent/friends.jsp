@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
-<%@ page import="org.json.JSONArray, org.json.JSONObject" %>
+<%@ page import="org.json.JSONArray, org.json.JSONObject, Utils.GetImage" %>
 <jsp:include page="addBootstrap.jsp"/>
 <%
 response.setHeader("Cache-Control","no-cache, no-store, must-revalidate"); //HTTP 1.1
@@ -79,7 +79,8 @@ if(session.getAttribute("username") == null) {
 						<form action="OtherUserDetails" method="post">
 							<tr>
 								<td>
-									<div style="background-color: #fff; border-bottom: 1px solid #fafafa;">
+									<div style="background-color: #fff; border-bottom: 1px solid #fafafa; width: 200px;">
+										<img src="data:image/png;base64,<%=GetImage.getImage(jsonObj)%>" width="50px" style="border-radius: 50%; position: absolute; left: 10px;"/>
 										<input class="btnSel" type="submit" name="btnClicked" value="<%=jsonObj.get("username")%>">	
 										<input id="userID" type="hidden" name="indexUser" value="<%=i%>">
 									</div>
@@ -101,14 +102,12 @@ if(session.getAttribute("username") == null) {
 	
 	
 <script type="text/javascript" language="javascript">
+	window.onload = function() {
+		var rows = document.querySelectorAll('tr:not(.header)');
 
-
-window.onload = function() {
-	var rows = document.querySelectorAll('tr:not(.header)');
-
-	  for (var i = 0; i < rows.length; i++) {
-	    rows[i].style.display = 'none';
-	  }
+		for (var i = 0; i < rows.length; i++) {
+		  rows[i].style.display = 'none';
+		}
 	}
 
 	function ContactsearchFX() {
@@ -120,7 +119,7 @@ window.onload = function() {
 	  table = document.getElementById("myTable");
 	  tr = table.getElementsByTagName("tr");
 	  for (i = 0; i < tr.length; i++) {
-	    td = tr[i].getElementsByTagName("td")[0];
+	  	td = tr[i].getElementsByTagName("td")[0];
 	    if (td) {
 	      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
 	        tr[i].style.display = "";

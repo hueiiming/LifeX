@@ -64,10 +64,10 @@ h1 {
 	border: 1px solid #ddd;
 	background: #F5FFFA;
 	outline: none;
-	height: 30px;
+	height: 40px;
 	width: 250px;
 	color: #000;
-	font-size: 16px;
+	font-size: 12px;
 	text-indent: 10px;
 }
 
@@ -97,3 +97,7 @@ h1 {
 .registerInbox a:hover {
 	color: darkgrey;
 }
+
+
+
+

@@ -17,6 +17,28 @@ if (session.getAttribute("username") != null) {
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+input[type='submit']:disabled{
+	cursor: not-allowed !important;
+	opacity: .3 !important;
+}
+
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label{
+  top: 182px;
+  left: 515px;
+  font-size: 9px;
+  opacity: 1;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  left: 515px;
+  top: 185px;
+  transition: 0.2s ease all;
+}
+</style>
 </head>
 <body>
 
@@ -25,19 +47,19 @@ if (session.getAttribute("username") != null) {
 			<h1>LifeX</h1>
 			<p style="text-align: center;"><em>Sign up to become a better version of yourself.</em></p>
 			<br>
-			<form action="RegServlet" method="post">
+			<form action="RegServlet" method="post" id="regForm">
 				<table>
-					<tr><td><p id="emailResult" style="color: red"></p></td></tr>
-					<tr><td><input id="email" type="text" name="email" placeholder="Email" required></td></tr>
+					<tr><td><p id="emailResult" style="color: red;"></p></td></tr>
+					<tr><td><input type="text" id="email" name="email" placeholder="Email Address" required></td></tr>
+					<tr><td><p id="usernameResult" style="color: red;"></p></td></tr>
+					<tr><td><input id="username" type="text" name="username" placeholder="Username" required></td></tr>
 					<tr><td><input id="firstName" type="text" name="first_name" placeholder="First Name" required></td></tr>
 					<tr><td><input id="lastName" type="text" name="last_name" placeholder="Last Name" required></td></tr>
-					<tr><td><p id="usernameResult" style="color: red"></p></td></tr>
-					<tr><td><input id="username" type="text" name="username" placeholder="Username" required></td></tr>
-					<tr><td><p id="passResult" style="color: red"></p></td></tr>
 					<tr><td><input id="password" type="password" name="password" placeholder="Password" required></td></tr>
+					<tr><td><p id="passResult" style="color: red"></p></td></tr>
 					<tr><td><input id="cPassword" type="password" name="cPassword" placeholder="Re-enter Password" required></td></tr>
 				</table>
-				<input id="signUp" type="submit" name="btnSubmit" value="Sign up">
+				<input id="signUp" type="submit" name="btnSubmit" value="Sign up" disabled="disabled">
 				<br>
 				<div class="tandc">
 					<em style="color:darkgrey;">By signing up, you agree to our</em> <p>Terms, Data Policy</p> <em style="color:darkgrey;">and</em> <p>Cookies Policy.</p>
@@ -52,37 +74,55 @@ if (session.getAttribute("username") != null) {
 	</div>
 	<script>
 		$(document).ready(function(){
-			$('#username').change(function(){
-				var username = $('#username').val();
-				
-				$.ajax({
-					type:'POST',
-					data:{username:username},
-					url:'RegServlet',
-					success: function(result) {
-						$('#usernameResult').html(result);
-					}
-				});
-			});
 			$('#email').change(function(){
 				var email = $('#email').val();
 				
 				$.ajax({
 					type:'POST',
 					data:{email:email},
-					url:'RegServlet',
+					url:'CheckUsernameEmailServlet',
 					success: function(result) {
-						$('#emailResult').html(result);
+						console.log(result);
+						if(result == 'Email Already Exists') {
+							$('#emailResult').html(result);
+						    $("#signUp").prop("disabled", true);    
+						} else {
+							$('#emailResult').html('');
+						    $("#signUp").prop("disabled", false);    
+						}
+					}
+				});
+			});
+			$('#username').change(function(){
+				var username = $('#username').val();
+				
+				$.ajax({
+					type:'POST',
+					data:{username:username},
+					url:'CheckUsernameEmailServlet',
+					success: function(result) {
+						console.log(result);
+						if(result == 'Username Already Exists') {
+							$('#usernameResult').html(result);
+						    $("#signUp").prop("disabled", true);    
+						} else {
+							$('#usernameResult').html('');
+						    $("#signUp").prop("disabled", false);    
+						}
 					}
 				});
 			});
 			$('#password, #cPassword').on('keyup', function () {
 				  if ($('#password').val() == $('#cPassword').val()) {
 				    $('#passResult').html('');
-				  } else 
+				    $("#signUp").prop("disabled", false);    
+				  } else {
 				    $('#passResult').html('Password Doesn\'t\ match');
+				    $("#signUp").prop("disabled", true);    
+				}});
 			});
-		});
+		
+		
 	</script>
 </body>
 </html>

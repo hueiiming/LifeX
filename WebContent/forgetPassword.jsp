@@ -39,13 +39,13 @@
 	
 <script type="text/javascript">
 	$(document).ready(function(){
-	$('#resetBtn').attr('disabled',true);
-	$('#message').keyup(function(){
-	  if($(this).val().length !=0)
-	      $('#resetBtn').attr('disabled', false);            
-	  else
-	      $('#resetBtn').attr('disabled',true);
-	})
+		$('#resetBtn').attr('disabled',true);
+		$('#message').keyup(function(){
+		  if($(this).val().length !=0)
+		      $('#resetBtn').attr('disabled', false);            
+		  else
+		      $('#resetBtn').attr('disabled',true);
+		});
 	});
 </script>
 </body>
