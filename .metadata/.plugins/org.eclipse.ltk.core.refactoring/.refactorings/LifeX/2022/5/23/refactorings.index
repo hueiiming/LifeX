@@ -1,0 +1,15 @@
+1653799798316	Move 2 resources to 'jsp'
+1653800354793	Rename package 'DAO'
+1653800656840	Delete element
+1653800721275	Rename type 'config'
+1653800756942	Rename type 'daoConfig'
+1653801058362	Delete element
+1653801313414	Rename package 'Models'
+1653804313677	Delete element
+1653812466314	Delete element
+1653812627088	Rename type 'RegUserSQL'
+1653812878384	Encapsulate field 'friendRequest'
+1653818478592	Delete element
+1653830189466	Delete element
+1653830192988	Delete element
+1653831443760	Delete element

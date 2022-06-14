@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<%@ page import="org.json.JSONObject" %>
+<jsp:include page="addBootstrap.jsp"/>
+</head>
+<body>
+<%
+	JSONObject jsonObj = (JSONObject) session.getAttribute("otherUserDetails");
+%>
+	<jsp:include page="navbar.jsp"/>
+	<div class="container-fluid" style="margin-top: 80px;">
+		<h1>User Details</h1>
+		<h2>Name: <%=jsonObj.get("username") %></h2>
+			<table>
+				<tr><td>Fullname: </td><td><%=jsonObj.get("first_name")%> <%=jsonObj.get("last_name")%></td></tr>
+				<%=jsonObj.get("id")%>
+			</table>
+		<%
+		if(jsonObj.get("friends") != null) {
+		
+		%>
+			<h2>Friend request sent. Wait for <%=jsonObj.get("username"))%> to approve your friend request.</h2>
+		<%
+		} else {
+		%>
+			</form>
+			<form action="sendFriendServlet" method="post">
+				<input type="submit" name="btnSubmit" value="Send Friend Request">
+			</form>
+		<%
+		}
+		%>
+	</div>
+</body>
+</html>

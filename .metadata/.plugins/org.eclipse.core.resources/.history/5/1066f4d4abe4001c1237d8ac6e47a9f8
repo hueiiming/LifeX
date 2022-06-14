@@ -1,0 +1,29 @@
+package SQL;
+
+import Configuration.DaoConfig;
+import Configuration.DaoStaticNames;
+
+public class SQLStatements {
+	
+	public static String insertUser() {
+		return "INSERT INTO " + DaoConfig.TABLE_NAME 
+				+ " (username, password, first_name, last_name, "
+				+ "email, bio, friends, friend_request, "
+				+ "time_stamp, profile_pic, expiry_timestamp, token) "
+				+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+	}
+	
+	public static String selectUser() {
+		return "SELECT * FROM " + DaoConfig.TABLE_NAME
+				+ " WHERE " + DaoStaticNames.USERNAME + " = ? "
+				+ " AND " + DaoStaticNames.PASSWORD + " = ?";
+	}
+	
+	public static String getUsername() {
+		return "SELECT " + DaoStaticNames.USERNAME + " FROM " + DaoConfig.TABLE_NAME
+				+ " WHERE " + DaoStaticNames.EMAIL + " = ?";
+	}
+	
+	
+	
+}

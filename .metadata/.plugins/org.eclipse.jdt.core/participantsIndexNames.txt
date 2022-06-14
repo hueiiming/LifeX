@@ -1,0 +1,5 @@
+INDEX VERSION 1.130
+C:\Users\Huei Ming\lifeX\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4144428111.index
+\LifeX\src
+C:\Users\Huei Ming\lifeX\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3052480935.index
+\LifeX\src

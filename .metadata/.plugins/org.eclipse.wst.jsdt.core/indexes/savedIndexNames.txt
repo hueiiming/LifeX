@@ -1,0 +1,9 @@
+INDEX VERSION 1.4+C:\Users\Huei Ming\lifeX\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4144428111.index
+4144428111.index
+2519320405.index
+3647247445.index
+1010965579.index
+886692220.index
+549688664.index
+1508685734.index

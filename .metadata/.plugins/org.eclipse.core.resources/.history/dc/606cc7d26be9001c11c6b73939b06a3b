@@ -1,0 +1,104 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #fafafa;
+}
+
+h1 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Pacifico', cursive;
+}
+
+::placeholder {
+	color: darkgrey;
+	font-size: 14px;
+}
+
+.registerInbox {
+	margin: auto;
+	margin-top: 2%;
+	border: 1px solid #ddd;
+	width: 320px;
+	height: 500px;
+	background: #fff;
+	color: #000;
+	box-sizing: border-box;
+	padding: 30px 30px;
+
+}
+
+.goBack {
+	margin: auto;
+	margin-top: 5px;
+	border: 1px solid #ddd;
+	width: 320px;
+	height: 50px;
+	background: #fff;
+	color: #000;
+	box-sizing: border-box;
+	
+}
+
+.registerInbox p {
+	margin: 0;
+	padding: 0;
+	color: darkgrey;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.tandc {
+	text-align: center;
+	font-size: 14px;
+}
+
+.registerInbox input {
+	width: 250px;
+	margin-bottom: 5px;
+}
+
+.registerInbox input[type="text"], input[type="password"] {
+	border: 1px solid #ddd;
+	background: #F5FFFA;
+	outline: none;
+	height: 30px;
+	width: 250px;
+	color: #000;
+	font-size: 16px;
+	text-indent: 10px;
+}
+
+.registerInbox input[type="submit"] {
+	border: none;
+	outline: none;
+	height: 30px;
+	background: #fb2525;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 5px;
+}
+
+.registerInbox input[type="submit"]:hover {
+	cursor: pointer;
+	background: darkred;
+	color: #fff;
+}
+
+.registerInbox a {
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #000;
+}
+
+.registerInbox a:hover {
+	color: darkgrey;
+}
+
+.registerInbox[type='submit']:disabled{
+	cursor: not-allowed;
+	opacity: .3;
+}

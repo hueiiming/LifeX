@@ -1,0 +1,11 @@
+package Utils;
+
+import java.sql.Timestamp;
+
+public class DateUtil {
+
+	public Timestamp getCurrentTimestamp() {
+		return new Timestamp(System.currentTimeMillis());
+
+	}
+}
