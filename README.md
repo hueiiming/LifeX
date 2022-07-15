@@ -1,4 +1,4 @@
 # LifeX
 LifeX is a J2EE Web Application where users can connect with each other (Java, JSP &amp; Servlets, MySQL)
 
-<a href="https://drive.google.com/uc?export=view&id=1qbLbrrspecECuY9Snp7dXpj3TemdSh62"><img src="https://drive.google.com/uc?export=view&id=1qbLbrrspecECuY9Snp7dXpj3TemdSh62" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
+<img width="960" alt="LifeX" src="https://user-images.githubusercontent.com/61011188/179132918-10fd8cee-fbda-4650-9840-cf73ad1aa57a.png">
